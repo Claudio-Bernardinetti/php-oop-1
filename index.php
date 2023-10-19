@@ -4,26 +4,26 @@ class Movie
 {
     public $title;
     public $language;
-    public $generes;
+    public $genres;
 
     // Costruttore
-    public function __construct($title, $language, $generes) 
+    public function __construct($title, $language, $genres) 
     {
         $this-> title = $title;
         $this-> language = $language;
-        $this-> generes = $generes;
+        $this-> genres = $genres;
     }
     // Metodo per ottenere i dettagli del film
     public function getDetails() 
     {
       return "Titolo: " . 
-      $this->title . ", Lingua: " . $this->language . ", Genere: " . $this->generes;
+      $this->title . ", Lingua: " . $this->language . ", Genere: " . implode(", ", $this->genres);
     }
 }
 
-$movie_1 = new Movie ('Rambo', 'Inglese', 'Azione');
-$movie_2 = new Movie ('Romanzo Criminale', 'Italiano', 'Thriller');
-$movie_3 = new Movie ('The Witcher', 'Inglese', 'Fantascienza');
+$movie_1 = new Movie ('Rambo', 'Inglese', ['Azione']); 
+$movie_2 = new Movie ('Romanzo Criminale', 'Italiano', ['Thriller', 'Dramma']); 
+$movie_3 = new Movie ('The Witcher', 'Inglese', ['Fantascienza', 'Azione']); 
 var_dump($movie_3);
 
 echo $movie_1->getDetails();
