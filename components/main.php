@@ -8,15 +8,23 @@
     <title>main</title>
     <!-- Title -->
 </head>
-<body>
-    <div>
-        <?php
-    // Stampa i dettagli di ciascun film
-        foreach ($movies as $movie) {
-            echo $movie->getDetails();
-            echo "<br><br>";
-        }
-        ?>
+<body class="bg-body-secondary" >
+    <div class="d-flex flex-column align-items-center pt-5">
+        <h3 class="bg-primary rounded p-2">
+           <?php
+           echo $movie_1->getDetails();
+           ?> 
+        </h3>
+        <h3 class="bg-danger rounded p-2">
+           <?php
+           echo $movie_2->getDetails();
+           ?> 
+        </h3>
+        <h3 class="bg-success rounded p-2">
+           <?php
+           echo $movie_3->getDetails();
+           ?> 
+        </h3>
     </div>
 </body>
 </html>
